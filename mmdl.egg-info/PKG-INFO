@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: mmdl
-Version: 0.0.2
+Version: 0.0.6
 Summary: MMDL [Mega Music Downloader] - A tool to easily download music.
-Home-page: UNKNOWN
+Home-page: https://github.com/techboy-coder/mmdl
 Author: techboy-coder
 License: UNKNOWN
 Keywords: python,audio,download,youtube,cli,tool
@@ -13,6 +13,7 @@ Classifier: Natural Language :: English
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Python :: 3.9
 Description-Content-Type: text/markdown
+License-File: LICENCE
 
 
 # mmdl

@@ -1,5 +1,14 @@
+LICENCE
+MANIFEST.in
 README.md
 setup.py
+mmdl/__init__.py
+mmdl/ask.py
+mmdl/cli.py
+mmdl/globals.py
+mmdl/mdl.py
+mmdl/utils.py
+mmdl/yt_utils.py
 mmdl.egg-info/PKG-INFO
 mmdl.egg-info/SOURCES.txt
 mmdl.egg-info/dependency_links.txt

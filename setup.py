@@ -9,7 +9,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.3'
+VERSION = '0.0.6'
 DESCRIPTION = 'MMDL [Mega Music Downloader] - A tool to easily download music.'
 LONG_DESCRIPTION = 'Music Downloading Cli Tool. Downloads audio and metadata from YouTube.'
 
@@ -22,6 +22,7 @@ setup(
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
+    url="https://github.com/techboy-coder/mmdl",
     packages=["mmdl"],
     install_requires=required,
     include_package_data=True,
@@ -35,7 +36,7 @@ setup(
     ],
     entry_points = {
         "console_scripts":[
-            'mmdl': 'mmdl=mmdl.cli:runme',
+            'mmdl=mmdl.cli:runme',
         ]
     }
 )
