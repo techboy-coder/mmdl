@@ -1,0 +1,8 @@
+README.md
+setup.py
+mmdl.egg-info/PKG-INFO
+mmdl.egg-info/SOURCES.txt
+mmdl.egg-info/dependency_links.txt
+mmdl.egg-info/entry_points.txt
+mmdl.egg-info/requires.txt
+mmdl.egg-info/top_level.txt
