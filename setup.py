@@ -9,13 +9,13 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.1'
-DESCRIPTION = 'MDL [Music Downloader] - A tool to easily download music.'
+VERSION = '0.0.01'
+DESCRIPTION = 'MMDL [Mega Music Downloader] - A tool to easily download music.'
 LONG_DESCRIPTION = 'Music Downloading Cli Tool. Downloads audio and metadata from YouTube.'
 
 # Setting up
 setup(
-    name="mdl",
+    name="mmdl",
     version=VERSION,
     author="techboy-coder",
     # author_email="",
@@ -30,7 +30,9 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.9"
-        "Topic :: Multimedia :: Sound/Audio"
-    ]
+        "Programming Language :: Python :: 3.9",
+    ],
+    entry_points = {
+        'mmdl': ['mmdl=mmdl.cli:main'],
+    }
 )

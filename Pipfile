@@ -19,5 +19,6 @@ ytmusicapi = "*"
 click = "*"
 click-help-colors = "*"
 pipreqs = "*"
+twine = "*"
 
 [dev-packages]
