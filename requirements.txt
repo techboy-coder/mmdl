@@ -1,0 +1,9 @@
+ytmusicapi==0.18.0
+youtube_dl==2021.6.6
+click_help_colors==0.9.1
+lxml==4.6.3
+click==8.0.1
+youtube_search_python==1.4.6
+eyed3==0.9.6
+questionary==1.10.0
+rich==10.6.0

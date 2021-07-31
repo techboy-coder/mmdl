@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+questionary = "*"
+youtube-search-python = "*"
+asyncio = "*"
+youtube-dl = "*"
+rich = "*"
+tqdm = "*"
+helium = "*"
+selenium = "*"
+lxml = "*"
+cssselect = "*"
+eyed3 = "*"
+ytmusicapi = "*"
+click = "*"
+click-help-colors = "*"
+pipreqs = "*"
+
+[dev-packages]
