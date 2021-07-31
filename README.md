@@ -1,4 +1,4 @@
-![](mmdl image.png)
+![mmdl](C:\Users\Shivr\Downloads\mmdl image.png)
 
 # mmdl - Mega Music Downloader
 
@@ -28,7 +28,7 @@ MMDL is a cli app which allows you to quickly and efficiently download one or mu
 pip install mmdl
 ```
 
-⚡**That’s it! **⚡
+⚡**That’s it!**⚡
 
 ## Usage 🔥
 
