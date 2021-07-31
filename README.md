@@ -1,4 +1,4 @@
-![mmdl](C:\Users\Shivr\Downloads\mmdl image.png)
+![mmdl]([C:\Users\Shivr\Downloads\mmdl image.png](https://github.com/techboy-coder/mmdl/blob/main/mmdl%20image.png))
 
 # mmdl - Mega Music Downloader
 
