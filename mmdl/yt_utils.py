@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from utils import Utils
+from .utils import Utils
 import youtube_dl
 from youtubesearchpython.__future__ import VideosSearch
 from ytmusicapi import YTMusic
@@ -8,7 +8,7 @@ from pathlib import Path
 import os
 import eyed3
 import urllib
-from globals import console
+from .globals import console
 
 
 class YtdlUtils():

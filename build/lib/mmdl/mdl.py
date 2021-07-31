@@ -27,10 +27,10 @@ install()
 # pretty.install()
 from rich.progress import track
 
-from globals import console
+from .globals import console
 
-from utils import Utils
-from yt_utils import YtdlUtils
+from .utils import Utils
+from .yt_utils import YtdlUtils
 
 
 ##Dev Dep

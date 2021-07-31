@@ -7,3 +7,4 @@ youtube_search_python==1.4.6
 eyed3==0.9.6
 questionary==1.10.0
 rich==10.6.0
+cssselect==1.1.0

@@ -15,7 +15,7 @@ from lxml.cssselect import CSSSelector
 from lxml.html import fromstring
 import click
 from mmdl import MusicDownloader
-from ask import asker
+from .ask import asker
 from rich.console import Console
 import questionary
 console = Console()
@@ -318,7 +318,7 @@ def single(song, verbose, debug):
   
 
 def runme():
-  main
+  main()
 if __name__ == '__main__':
   runme()
   # :/ 
