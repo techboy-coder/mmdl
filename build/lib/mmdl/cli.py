@@ -159,7 +159,7 @@ def list(songs, verbose, debug, ask):
     songs_list = songs_list.split(",")
   else:
     if len(songs) < 1:
-      console.print("[cyan][-][/] You didn't specify any songs. So we'll be manually asking them to you.")
+      # console.print("[cyan][-][/] You didn't specify any songs. So we'll be manually asking them to you.")
       songs_list = questionary.text("Write all songs search terms (comma seperated)").ask()
       if not songs_list:
         quit()
@@ -196,10 +196,8 @@ def list(songs, verbose, debug, ask):
 @click.option("-d","--debug", help="Enable debug mode", is_flag=True)
 @click.option("-a","--ask", help="Get songs via input (easy)", is_flag=True)
 def ytmusic(file, verbose, debug, ask):
-  if not ask and not file:
-    ask = True
   """
-  Download multiple songs from YouTube Music Liked songs.
+  Download multiple songs from YouTube Music liked songs playlist.
 
   mmdl [Mega Music Downloader] - A tool to easily download music.
 
@@ -209,6 +207,8 @@ def ytmusic(file, verbose, debug, ask):
   Run 'mmdl download ytmusic <filepath e.g. ~/Downloads/file.txt> (or --ask or -a for entering file via input)'.
 
   """
+  if not ask and not file:
+    ask = True
   if ask:
     console.print("[cyan][>][/] We'll be manually asking you for the file location.")
     console.print("""

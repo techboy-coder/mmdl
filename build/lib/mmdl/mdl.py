@@ -190,7 +190,7 @@ class MusicDownloader():
                         temp.append(song)
 
                 if len(temp) > 1:
-                    for r in track(concurrent.futures.as_completed(temp), description="Downloading song(s) (Be patient, this can take some time)...", total=len(temp)):
+                    for r in track(concurrent.futures.as_completed(temp), description="Downloading song(s) (This can take some time)...", total=len(temp)):
                         pass
                 else:
                     with console.status("[bold]Downloading single song, please wait...[/bold]", spinner="bouncingBar") as status:
