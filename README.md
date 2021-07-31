@@ -1,4 +1,4 @@
-![carbon](./carbon.svg)
+![](mmdl image.png)
 
 # mmdl - Mega Music Downloader
 
@@ -74,4 +74,21 @@ We welcome contributions very much. They are appreciated.
 1. Check for bugs/issues you would like to solve.
 2. Fork the repo and make your changes.
 3. Send a pull request.
+
+## Credits 🥂
+
+**The following amazing libraries helped me make this project:**
+
+- https://github.com/tmbo/questionary - Questionary by Tom Bocklisch and Kian Cross
+- https://github.com/alexmercerind/youtube-search-python - Youtube Search Python by Hiteh Kumar Saini
+- https://github.com/willmcgugan/rich - Rich by Will McGugan
+- https://github.com/ytdl-org/youtube-dl - YoutubeDl
+
+## License ⚖️
+
+The MIT License (MIT)
+
+Copyright (c) 2021 - techboy-coder
+
+------
 
