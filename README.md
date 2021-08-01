@@ -20,9 +20,14 @@ MMDL is a cli app which allows you to quickly and efficiently download one or mu
 ## Requirements 👇
 
 - Python 3
+
 - FFmpeg
 
+  *Here is a quick guide: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg*
+
 ## Install ❤️
+
+*Make sure you have installed FFmpeg. Else this programm won’t work.*
 
 ```bash
 pip install mmdl
@@ -50,10 +55,10 @@ mmdl download <method> #(add -h for more information)
 
 #### Methods
 
-- File `mmdl download file <location>`: Get songs from file. Then download them.
-- List `mmdl download list "Term1" "Term2" ...` or `mmdl download list -a` for a prompt: Add multiple songs as cli arguments or enter them in a prompt.
-- YTMusic (beta) `mmdl download ytmusi` : Download multiple songs from *YouTube Music liked songs playlist* (via parsing HTML)
-- Single `mmdl download single song name`: Download a single song.
+- **File** `mmdl download file <location>`: Get songs from file. Then download them.
+- **List** `mmdl download list "Term1" "Term2" ...` or `mmdl download list -a` for a prompt: Add multiple songs as cli arguments or enter them in a prompt.
+- **YTMusic** (beta) `mmdl download ytmusi` : Download multiple songs from *YouTube Music liked songs playlist* (via parsing HTML)
+- **Single** `mmdl download single song name`: Download a single song.
 
 ## Support ⚡
 
