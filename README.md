@@ -33,7 +33,7 @@ MMDL is a cli app which allows you to quickly and efficiently download one or mu
 pip install mmdl
 ```
 
-⚡**That’s it!**⚡
+⚡__That’s it!__⚡
 
 ## Usage 🔥
 
