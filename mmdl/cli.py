@@ -125,7 +125,7 @@ def file(file, seperator, verbose, debug):
   [green]mmdl [Mega Music Downloader] - A tool to easily download music.[/green]
   """)
   console.print("\n[cyan]> [/] Total number of songs: %s. \n" % (len(songs)))
-  if not questionary.confirm("Do you want to continue").ask():
+  if not questionary.confirm("Do you want to continue?").ask():
     quit()
   # file, verbose, debug
   MusicDownloader(songs, verbose, debug).download_songs()
@@ -153,14 +153,14 @@ def list(songs, verbose, debug, ask):
   """
   if ask:
     console.print("[cyan][>][/] We'll be manually asking you for songs.")
-    songs_list = questionary.text("Write all songs search terms (comma seperated)").ask()
+    songs_list = questionary.text("Write all songs search terms (comma seperated):").ask()
     if not songs_list:
       quit()
     songs_list = songs_list.split(",")
   else:
     if len(songs) < 1:
       # console.print("[cyan][-][/] You didn't specify any songs. So we'll be manually asking them to you.")
-      songs_list = questionary.text("Write all songs search terms (comma seperated)").ask()
+      songs_list = questionary.text("Write all songs search terms (comma seperated):").ask()
       if not songs_list:
         quit()
       songs_list = songs_list.split(",")
@@ -267,7 +267,7 @@ def ytmusic(file, verbose, debug, ask):
   [green]mmdl [Mega Music Downloader] - A tool to easily download music.[/green]
   """)
   console.print("\n[cyan]> [/] Total number of songs: %s. \n" % (len(songs_list)))
-  if not questionary.confirm("Do you want to continue").ask():
+  if not questionary.confirm("Do you want to continue?").ask():
     quit()
   # file, verbose, debug
   MusicDownloader(songs_list, verbose, debug).download_songs()

@@ -23,12 +23,12 @@ def asker():
         ).ask()
 
         if single_songs == "One song":
-            return [questionary.text("What is the song name").ask()]
+            return [questionary.text("What is the song name?").ask()]
         else:
             input_method = questionary.select(
-                "Which songs do you want to download?",
+                "How do you want to download?",
                 choices=[
-                    "Songs, comma seperated",
+                    "Write song titles, comma seperated",
                     'List in textfile (1 Song per line)',
                     'From YTMusic (beta)',
                 ]).ask()  # returns value of selection
@@ -58,7 +58,7 @@ def asker():
                 songs_list = text_file.read().splitlines()
                 return songs_list
             elif input_method=="Songs, comma seperated":
-                songs_list = questionary.text("Write all songs (comma seperated)").ask().split(",")
+                songs_list = questionary.text("Write all songs (comma seperated):").ask().split(",")
                 return songs_list
     except Exception as e:
         ## eventually change :/
