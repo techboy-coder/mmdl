@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: mmdl
-Version: 0.1.4
+Version: 0.1.5
 Summary: MMDL [Mega Music Downloader] - A tool to easily download music.
 Home-page: https://github.com/techboy-coder/mmdl
 Author: techboy-coder
@@ -51,7 +51,7 @@ MMDL is a cli app which allows you to quickly and efficiently download one or mu
 pip install mmdl
 ```
 
-⚡**That’s it!**⚡
+⚡__That’s it!__⚡
 
 ## Usage 🔥
 
