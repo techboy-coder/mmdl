@@ -138,14 +138,14 @@ def list(songs, verbose, debug, ask):
   """
   if ask:
     console.print("[cyan][>][/] We'll be manually asking you for songs.")
-    songs_list = questionary.text("Write all songs search terms (comma seperated)").ask()
+    songs_list = questionary.text("Write all songs search terms (comma seperated): ").ask()
     if not songs_list:
       quit()
     songs_list = songs_list.split(",")
   else:
     if len(songs) < 1:
       # console.print("[cyan][-][/] You didn't specify any songs. So we'll be manually asking them to you.")
-      songs_list = questionary.text("Write all songs search terms (comma seperated)").ask()
+      songs_list = questionary.text("Write all songs search terms (comma seperated):").ask()
       if not songs_list:
         quit()
       songs_list = songs_list.split(",")
