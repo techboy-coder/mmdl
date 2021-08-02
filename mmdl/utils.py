@@ -83,7 +83,7 @@ def print_logo():
 def num_of_songs_printer(num):
   console.print("\n[cyan]> [/] Total number of songs: %s. \n" % (num))
 
-def wanna_continue(msg="Do you want to continue"):
+def wanna_continue(msg="Do you want to continue? "):
     if not questionary.confirm(msg).ask():
       quit()
 
