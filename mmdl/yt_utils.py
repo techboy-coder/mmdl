@@ -23,7 +23,7 @@ class YtdlUtils():
                 {
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
-                'preferredquality': '192',
+                # 'preferredquality': '192',
                 }
             ],
             'outtmpl': str(self.output_dir)+'/%(title)s.%(ext)s',
@@ -40,15 +40,11 @@ class YtdlUtils():
             with youtube_dl.YoutubeDL(self.ytdl_opts) as ydl:
                 info = ydl.extract_info(url, download=True)
                 filename = ydl.prepare_filename(info)
-                filename = filename.replace("webm","mp3")
-                filename = filename.replace("m4a", "mp3")
                 return {"filename": filename, "url": url, "rest":rest}
         else:
             with youtube_dl.YoutubeDL(self.ytdl_opts) as ydl:
                 info = ydl.extract_info(url, download=False)
                 filename = ydl.prepare_filename(info)
-                filename = filename.replace("webm","mp3")
-                filename = filename.replace("m4a", "mp3")
                 return {"filename": filename, "url": url, "rest":rest}
             
     def logger(self):

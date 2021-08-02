@@ -17,6 +17,7 @@ import click
 from mmdl import MusicDownloader
 from .ask import asker
 from rich.console import Console
+from .utils import *
 import questionary
 console = Console()
 from click_help_colors import HelpColorsGroup, HelpColorsCommand
@@ -50,23 +51,15 @@ def go(verbose, debug):
   # Go Command
   > Easy way to download songs. Uses inputs/inquirer. (Simply run 'mmdl go')
   """
+  print_logo()
 
   if debug:
     console.log("Verbose: ", verbose)
     console.log("Debug: ", debug)
 
-  console.print("""\b[red]
-                            _ _ 
-                          | | |
-  _ __ ___  _ __ ___   __| | |
-  | '_ ` _ \| '_ ` _ \ / _` | |
-  | | | | | | | | | | | (_| | |   [/]by techboy-coder[red]
-  |_| |_| |_|_| |_| |_|\__,_|_|   [/]find me on https://github.com/techboy-coder
-                                                      
-  [green]mmdl [Mega Music Downloader] - A tool to easily download music.[/green]
-  """)
+
   song_names=asker()
-  console.print("\n[cyan]> [/] Total number of songs: %s. \n" % (len(song_names)))
+  num_of_songs_printer(len(song_names))
   # List, verbose, debug
   MusicDownloader(song_names, verbose, debug).download_songs()
 
@@ -114,19 +107,11 @@ def file(file, seperator, verbose, debug):
     console.log("Verbose: ", verbose)
     console.log("Debug: ", debug)
 
-  console.print("""\b[red]
-                            _ _ 
-                          | | |
-  _ __ ___  _ __ ___   __| | |
-  | '_ ` _ \| '_ ` _ \ / _` | |
-  | | | | | | | | | | | (_| | |   [/]by techboy-coder[red]
-  |_| |_| |_|_| |_| |_|\__,_|_|   [/]find me on https://github.com/techboy-coder
-                                                      
-  [green]mmdl [Mega Music Downloader] - A tool to easily download music.[/green]
-  """)
-  console.print("\n[cyan]> [/] Total number of songs: %s. \n" % (len(songs)))
-  if not questionary.confirm("Do you want to continue").ask():
-    quit()
+  print_logo()
+
+  num_of_songs_printer(len(songs))
+
+  wanna_continue()
   # file, verbose, debug
   MusicDownloader(songs, verbose, debug).download_songs()
   return
@@ -174,17 +159,8 @@ def list(songs, verbose, debug, ask):
     console.log("Verbose: ", verbose)
     console.log("Debug: ", debug)
 
-  console.print("""\b[red]
-                            _ _ 
-                          | | |
-  _ __ ___  _ __ ___   __| | |
-  | '_ ` _ \| '_ ` _ \ / _` | |
-  | | | | | | | | | | | (_| | |   [/]by techboy-coder[red]
-  |_| |_| |_|_| |_| |_|\__,_|_|   [/]find me on https://github.com/techboy-coder
-                                                      
-  [green]mmdl [Mega Music Downloader] - A tool to easily download music.[/green]
-  """)
-  console.print("\n[cyan]> [/] Total number of songs: %s. \n" % (len(songs_list)))
+  print_logo()
+  num_of_songs_printer(len(songs_list))
   # file, verbose, debug
   MusicDownloader(songs_list, verbose, debug).download_songs()
   return
@@ -209,9 +185,8 @@ def ytmusic(file, verbose, debug, ask):
   """
   if not ask and not file:
     ask = True
-  if ask:
-    console.print("[cyan][>][/] We'll be manually asking you for the file location.")
-    console.print("""
+  
+  guide = """
 [bold red]YT-Music[/bold red]. 
 - Go to your YTMusic liked songs playlist (https://music.youtube.com/playlist?list=LM)
 - Make sure you are logged in
@@ -219,56 +194,39 @@ def ytmusic(file, verbose, debug, ask):
 - Keep scrolling down until you reach the end of your playlist (Songs will stop loading)
 - Copy the all the html markup
 - Create a text file and paste the html into it.
-                """)
-    if not questionary.confirm("Only continue if you have done the task.").ask():
-        quit()
+                """
+
+  if ask:
+    console.print("[cyan][>][/] We'll be manually asking you for the file location.")
+    console.print(guide)
+    wanna_continue("Only continue if you have done the task.")
+
     file = questionary.path("Where is that file located?").ask()
     with open(file, "r", encoding="utf-8") as f:
         data = f.read()
-    h = fromstring(data)
-    sel = CSSSelector("yt-formatted-string.title.style-scope.ytmusic-responsive-list-item-renderer.complex-string > a.yt-simple-endpoint.style-scope.yt-formatted-string")
-    songs_list=[e.text for e in sel(h)]
-    if not songs_list[0]:
-      console.log("[red][-] Hmm. No songs could be parsed from html. Did you select the correct HTML? If you see a error please make a bug report. Thanks!")
-      quit()
+
   if not ask:
     if not file:
       console.log("[red][-] You need to enter the file location or add the -a flag.")
       quit()
     data = file.read()
-    h = fromstring(data)
-    sel = CSSSelector("yt-formatted-string.title.style-scope.ytmusic-responsive-list-item-renderer.complex-string > a.yt-simple-endpoint.style-scope.yt-formatted-string")
-    songs_list=[e.text for e in sel(h)]
-    if not songs_list[0]:
-      console.log("[red][-] Hmm. No songs could be parsed from html. Did you select the correct HTML? If you see a error please make a bug report. Thanks!")
-      console.print("""
-[bold red]YT-Music[/bold red]. 
-- Go to your YTMusic liked songs playlist (https://music.youtube.com/playlist?list=LM)
-- Make sure you are logged in
-- Press Ctrl/Cmd + Shift + i and open the dev tools
-- Keep scrolling down until you reach the end of your playlist (Songs will stop loading)
-- Copy the all the html markup
-- Create a text file and paste the html into it.
-      """)
+
+    
+  h = fromstring(data)
+  sel = CSSSelector("yt-formatted-string.title.style-scope.ytmusic-responsive-list-item-renderer.complex-string > a.yt-simple-endpoint.style-scope.yt-formatted-string")
+  songs_list=[e.text for e in sel(h)]
+  if not songs_list[0]:
+    console.log("[red][-] Hmm. No songs could be parsed from html. Did you select the correct HTML? If you see a error please make a bug report. Thanks!")
+    console.print(guide)
 
   
   if debug:
     console.log("Songs: ", str(songs_list))
     console.log("Verbose: ", verbose)
     console.log("Debug: ", debug)
-  console.print("""\b[red]
-                            _ _ 
-                          | | |
-  _ __ ___  _ __ ___   __| | |
-  | '_ ` _ \| '_ ` _ \ / _` | |
-  | | | | | | | | | | | (_| | |   [/]by techboy-coder[red]
-  |_| |_| |_|_| |_| |_|\__,_|_|   [/]find me on https://github.com/techboy-coder
-                                                      
-  [green]mmdl [Mega Music Downloader] - A tool to easily download music.[/green]
-  """)
-  console.print("\n[cyan]> [/] Total number of songs: %s. \n" % (len(songs_list)))
-  if not questionary.confirm("Do you want to continue").ask():
-    quit()
+  print_logo()
+  num_of_songs_printer(len(songs_list))
+  wanna_continue()
   # file, verbose, debug
   MusicDownloader(songs_list, verbose, debug).download_songs()
   return
@@ -300,16 +258,7 @@ def single(song, verbose, debug):
     console.log("Verbose: ", verbose)
     console.log("Debug: ", debug)
 
-  console.print("""\b[red]
-                            _ _ 
-                          | | |
-  _ __ ___  _ __ ___   __| | |
-  | '_ ` _ \| '_ ` _ \ / _` | |
-  | | | | | | | | | | | (_| | |   [/]by techboy-coder[red]
-  |_| |_| |_|_| |_| |_|\__,_|_|   [/]find me on https://github.com/techboy-coder
-                                                      
-  [green]mmdl [Mega Music Downloader] - A tool to easily download music.[/green]
-  """)
+  print_logo()
   songs = [song]
   console.print("\n[cyan]> [/] Song: %s. \n" % (song))
   # file, verbose, debug
