@@ -6,7 +6,9 @@
 
 ## What is mmdl ❓
 
-MMDL is a cli app which allows you to quickly and efficiently download one or multiple songs from YouTube.
+**TLDR**: MMDL is a cli app which allows you to quickly and efficiently download one or multiple songs from YouTube.
+
+I wanted a tool to quickly and efficiently download songs/audios from YouTube based on the name of the song. I also wanted the songs to be tagged with metadata. This is why I created this simple to use tool.
 
 ### Why
 
