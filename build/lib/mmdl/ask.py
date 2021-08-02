@@ -23,17 +23,17 @@ def asker():
         ).ask()
 
         if single_songs == "One song":
-            return [questionary.text("What is the song name").ask()]
+            return [questionary.text("What is the song name?").ask()]
         else:
             input_method = questionary.select(
-                "Which songs do you want to download?",
+                "How do you want to download?",
                 choices=[
-                    "Songs, comma seperated",
+                    "Write song titles, comma seperated",
                     'List in textfile (1 Song per line)',
                     'From YTMusic (beta)',
                 ]).ask()  # returns value of selection
 
-            if input_method == "From YTMusic":
+            if input_method == "From YTMusic (beta)":
                 console.print("""[bold red]YT-Music[/bold red]. 
                 - Go to your YTMusic liked songs playlist (https://music.youtube.com/playlist?list=LM)
                 - Make sure you are logged in
@@ -57,8 +57,8 @@ def asker():
                 text_file = open(file ,encoding='utf-8')
                 songs_list = text_file.read().splitlines()
                 return songs_list
-            elif input_method=="Songs, comma seperated":
-                songs_list = questionary.text("Write all songs (comma seperated)").ask().split(",")
+            elif input_method=="Write song titles, comma seperated":
+                songs_list = questionary.text("Write all songs (comma seperated):").ask().split(",")
                 return songs_list
     except Exception as e:
         ## eventually change :/
