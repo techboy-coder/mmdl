@@ -1,4 +1,4 @@
-![mmdl](https://raw.githubusercontent.com/techboy-coder/mmdl/main/mmdl%20image.png)
+![mmdl](mmdl_image.png)
 
 # mmdl - Mega Music Downloader
 

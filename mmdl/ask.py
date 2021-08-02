@@ -33,7 +33,7 @@ def asker():
                     'From YTMusic (beta)',
                 ]).ask()  # returns value of selection
 
-            if input_method == "From YTMusic":
+            if input_method == "From YTMusic (beta)":
                 console.print("""[bold red]YT-Music[/bold red]. 
                 - Go to your YTMusic liked songs playlist (https://music.youtube.com/playlist?list=LM)
                 - Make sure you are logged in
@@ -57,7 +57,7 @@ def asker():
                 text_file = open(file ,encoding='utf-8')
                 songs_list = text_file.read().splitlines()
                 return songs_list
-            elif input_method=="Songs, comma seperated":
+            elif input_method=="Write song titles, comma seperated":
                 songs_list = questionary.text("Write all songs (comma seperated):").ask().split(",")
                 return songs_list
     except Exception as e:
