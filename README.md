@@ -1,4 +1,4 @@
-![mmdl](https://raw.githubusercontent.com/techboy-coder/mmdl/main/mmdl%20image.png)
+![mmdl](mmdl_image.png)
 
 # mmdl - Mega Music Downloader
 
@@ -6,7 +6,9 @@
 
 ## What is mmdl ❓
 
-MMDL is a cli app which allows you to quickly and efficiently download one or multiple songs from YouTube.
+**TLDR**: MMDL is a cli app which allows you to quickly and efficiently download one or multiple songs from YouTube.
+
+I wanted a tool to quickly and efficiently download songs/audios from YouTube based on the name of the song. I also wanted the songs to be tagged with metadata. This is why I created this simple to use tool.
 
 ### Why
 
@@ -68,15 +70,15 @@ Please [open a issue](https://github.com/techboy-coder/mmdl/issues/new) with som
 
 ### Questions ❓
 
-Please [start/check a discussion](https://github.com/techboy-coder/mmdl/discussions/new). 
+Please [start/search for a discussion](https://github.com/techboy-coder/mmdl/discussions/new). 
 
 ## Contributing 🤜
 
-We welcome contributions very much. They are appreciated. 
+We welcome contributions very much (Even small ones). They are appreciated. 
 
 ### Steps
 
-1. Check for bugs/issues you would like to solve.
+1. Check for bugs/issues you would like to solve or think of new features you would like to implement.
 2. Fork the repo and make your changes.
 3. Send a pull request.
 
@@ -89,7 +91,11 @@ We welcome contributions very much. They are appreciated.
 - https://github.com/willmcgugan/rich - Rich by Will McGugan
 - https://github.com/ytdl-org/youtube-dl - YoutubeDl
 
-## License ⚖️
+## Legality ⚖️
+
+**I assume no liability or responsibility for how this app is used.** Please stay legal and respect the laws in your country. This tool is intended for archiving music for which you have a license. 
+
+## License 📜
 
 The MIT License (MIT)
 
