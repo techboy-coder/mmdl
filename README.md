@@ -32,7 +32,7 @@ I wanted a tool to quickly and efficiently download songs/audios from YouTube ba
 *Make sure you have installed FFmpeg. Else this programm won’t work.*
 
 ```bash
-pip install mmdl
+pip install -U mmdl
 ```
 
 ⚡ **That’s it!** ⚡
