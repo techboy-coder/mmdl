@@ -37,6 +37,7 @@ pip install -U mmdl
 
 ⚡ **That’s it!** ⚡
 
+Mmdl has been only been tested using Python 3.9. 
 ## Usage 🔥
 
 ### Go
