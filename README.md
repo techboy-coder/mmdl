@@ -2,7 +2,7 @@
 
 # mmdl - Mega Music Downloader
 
-![License](https://img.shields.io/pypi/l/mmdl?style=for-the-badge) ![PyPI](https://img.shields.io/pypi/v/mmdl?style=for-the-badge) ![Downloads](https://img.shields.io/pypi/dw/mmdl?style=for-the-badge)
+![License](https://img.shields.io/pypi/l/mmdl?style=for-the-badge) ![PyPI](https://img.shields.io/pypi/v/mmdl?style=for-the-badge) ![Downloads](https://img.shields.io/pypi/dm/mmdl?style=for-the-badge)
 
 ## What is mmdl ❓
 
