@@ -1,7 +1,7 @@
 ytmusicapi==0.18.0
 youtube_dl==2021.6.6
 click_help_colors==0.9.1
-lxml==4.6.3
+lxml==4.9.1
 click==8.0.1
 youtube_search_python==1.4.6
 eyed3==0.9.6
